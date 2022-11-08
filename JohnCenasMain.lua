@@ -1,3 +1,5 @@
+local YourScript = loadstring(game:HttpGetAsync("LINK HERE"))
+
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -64,8 +66,9 @@ local PASettings = {
 }
 
 
-local Methods = {}
+getgenv().Methods = {}
 
+local Methods = getgenv().Methods
 local CurrentType = "Idle"
 local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
 local Sprinting = false
@@ -77,8 +80,6 @@ local Character = Player.Character
 
 local Humanoid = Character:FindFirstChildOfClass("Humanoid")
 Humanoid.WalkSpeed = PASettings.WalkSpeed
-
-Character.Torso.Massless = true
 
 task.spawn(function()
     while task.wait() do
@@ -212,7 +213,7 @@ function Methods:SetScriptCreator(Name)
     PASettings.ScriptCreator = Name    
 end
 
-Methods:SystemMessage("PA FOOTAGE CLOSED PRE-ALPHA")
+YourScript()
 
 function LoadIntro()
 	game:GetService("ContentProvider"):PreloadAsync({"http://www.roblox.com/asset/?id=8955607825"})

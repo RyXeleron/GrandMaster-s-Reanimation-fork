@@ -1,1 +1,1 @@
-literally just email us at pendulumutilitiesforbuisness@gmail.com and we'll give you info about our Security Policy.
+Email us at pendulumutilitiesforbuisness@gmail.com for info about our Security Policy.

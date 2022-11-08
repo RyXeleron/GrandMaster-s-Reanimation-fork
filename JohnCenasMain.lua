@@ -1,5 +1,3 @@
-local YourScript = loadstring(game:HttpGetAsync("LINK HERE"))
-
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart

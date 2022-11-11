@@ -367,7 +367,7 @@ for _,v in pairs(PASettings.Animations.Attacks.OneKeyAttack) do
 end
 
 for _, v in pairs(PASettings.HatsBeingAnimated) do
-    local Handle = Character[v].Handle
+    local Handle = Character[string.split(v, "\\\\")[1]]
     Handle:BreakJoints()
     local Controller = Instance.new("Motor6D")
     Controller.Parent = Handle

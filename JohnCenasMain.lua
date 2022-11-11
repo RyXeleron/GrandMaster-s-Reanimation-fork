@@ -1,7 +1,6 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local TestMode = true
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)
 Highlight.OutlineColor = Color3.fromRGB(55, 127, 244)
@@ -18,7 +17,7 @@ Highlight.Adornee = Root
 
 
 local PASettings = {
-    WalkSpeed = 10,
+    WalkSpeed = 16,
     JumpPower = 125,
     ScriptCreator = "Anonymous Creator",
     HatsBeingAnimated = {
@@ -211,8 +210,8 @@ function Methods:SetScriptCreator(Name)
     PASettings.ScriptCreator = Name    
 end
 
-YourScript()
-
+function Methods:RunScript()
+	
 function LoadIntro()
 	game:GetService("ContentProvider"):PreloadAsync({"http://www.roblox.com/asset/?id=8955607825"})
 	
@@ -478,3 +477,5 @@ while task.wait() do
  
     end
 end
+end
+return Methods

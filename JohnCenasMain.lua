@@ -465,7 +465,7 @@ function Methods:PlayAnimation(ID, TweenSpeed, Speed)
 end
 
 
-
+Methods:SystemMessage("PENDULUM ANIMATOR: Script Hash is "..script:GetHash())
 Methods:SystemMessage("PENDULUM ANIMATOR: Script finished loading!")
 while task.wait() do
     if CurrentType == "Idle" and Humanoid.Health >= 0 and not Attacking then

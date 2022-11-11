@@ -1,7 +1,7 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local Version = "v0.0.2"
+local Version = "v0.0.3"
 print(Version)
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)
@@ -409,7 +409,7 @@ local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
     }
     
     for _, v in pairs(PASettings.HatsBeingAnimated) do
-        Joints[Character[string.split(v, "\\\\")[1]]] = Character[Character[string.split(v, "\\\\")[1]]].Handle.Motor6D
+        Joints[string.split(Character[v].Name, "\\\\")[1]] = Character[Character[string.split(v, "\\\\")[1]]].Handle.Motor6D
     end
     
     Global.dancing = true

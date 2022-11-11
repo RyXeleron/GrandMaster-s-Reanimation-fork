@@ -145,8 +145,8 @@ function Methods:EnableSprinting(AnimationID, TweenSpeed, Speed)
 end
 
 
-function Methods:HatToAnimate(HatName)
-    PASettings.HatsBeingAnimated[HatName] = HatName
+function Methods:HatToAnimate(HatName, WeldedTo)
+    PASettings.HatsBeingAnimated[HatName] = HatName.."\\\\"..WeldedTo
 end
 
 function Methods:HatFlingOnTouch(Hat)
@@ -406,6 +406,7 @@ local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
     
     for _, v in pairs(PASettings.HatsBeingAnimated) do
         Joints[v] = Character[v].Handle.Motor6D
+	Character[v].Handle.Motor6D.Part0 = Character[string.split(v, "\\\\")[2]]
     end
     
     Global.dancing = true

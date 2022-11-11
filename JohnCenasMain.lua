@@ -194,7 +194,7 @@ function Methods:SystemMessage(Text)
     game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = Text, Color = Color3.fromRGB(43,98,255), Font = Enum.Font.Ubuntu} )
 end
 
-Methods:SystemMesssage("Current Version: "..Version)
+Methods:SystemMessage("Current Version: "..Version)
 
 function Methods:RemoveMesh(HatName)
     local success, failed = pcall(function()

@@ -83,7 +83,7 @@ Humanoid.WalkSpeed = PASettings.WalkSpeed
 task.spawn(function()
     while task.wait() do
        if not Flinging then
-            Root.Position = Character.Torso.Position - Vector3.new(0, 4, 0)
+            Root.Position = Character.Torso.Position - Vector3.new(0, 5, 0)
         end
     end
 end)

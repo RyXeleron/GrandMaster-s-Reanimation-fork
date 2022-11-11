@@ -1,6 +1,7 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Version = "v0.0.1"
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)
 Highlight.OutlineColor = Color3.fromRGB(55, 127, 244)
@@ -191,6 +192,8 @@ end
 function Methods:SystemMessage(Text)
     game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = Text, Color = Color3.fromRGB(43,98,255), Font = Enum.Font.Ubuntu} )
 end
+
+Methods:SystemMesssage("Current Version: "..Version)
 
 function Methods:RemoveMesh(HatName)
     local success, failed = pcall(function()

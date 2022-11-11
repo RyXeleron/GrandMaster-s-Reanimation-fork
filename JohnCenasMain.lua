@@ -174,6 +174,30 @@ function Methods:HatFlingOnTouch(Hat)
     end)
 end
 
+
+function Methods:BodyPartFlingOnTouch(BodyPart)
+    local Hat = Character[BodyPart].Handle
+    Hat.Touched:Connect(function(BasePart)
+        if BasePart.Parent:FindFirstChildOfClass("Humanoid") and BasePart.Parent.Name ~= Player.Name and Attacking and not Flinging then
+            Flinging = true
+            local Connection = game:GetService("RunService").Heartbeat:Connect(function()
+                Root.Position = BasePart.Parent.PrimaryPart.Position
+            end)
+            task.wait(1)
+            Connection:Disconnect()
+            Flinging = false
+        elseif BasePart.Parent.Parent:FindFirstAncestorOfClass("Humanoid") and BasePart.Parent.Parent.Name ~= Player.Name and Attacking and not Flinging then
+            Flinging = true
+            local Connection = game:GetService("RunService").Heartbeat:Connect(function()
+                Root.Position = BasePart.Parent.Parent.PrimaryPart.Position
+            end)
+            task.wait(1)
+            Connection:Disconnect()
+            Flinging = false
+        end
+    end)
+end
+
 function Methods:ChangeHatName(OGName, NewName)
     Character[OGName].Name = NewName
 end

@@ -363,46 +363,6 @@ local function PAError(Message)
     error("PA error: \n" .. Message)
 end
 
-for _,v in pairs(PASettings.Animations.Attacks.OneKeyAttack) do
-    if type(v) == "table" then
-        print("Found attack")
-        local Attack = v
-        warn(Attack.Key)
-        Mouse.KeyDown:Connect(function(Key)
-            if string.lower(Key) == string.lower(Attack.Key) and not Attacking then
-                print("Attacking")
-                local CanSprint
-                if PASettings.Animations.SprintAnimation.SprintingEnabled then
-                    CanSprint = true
-                    PASettings.Animations.SprintAnimation.SprintingEnabled = false
-                end
-                
-                Humanoid.WalkSpeed = Attack.AttackWalkSpeed
-                Attacking = true
-                task.wait()
-                PlayAnimation(Attack.AnimationID, Attack.FrameSpeed, Attack.TweenSpeed, "Attacking")
-                Attacking = false
-                
-                if CanSprint then
-                    PASettings.Animations.SprintAnimation.SprintingEnabled = true
-                end
-                Humanoid.WalkSpeed = PASettings.WalkSpeed
-            end
-        end)
-    else
-        continue
-    end
-end
-
-for _, v in pairs(PASettings.HatsBeingAnimated) do
-    local Handle = Character[string.split(v, "\\\\")[1]].Handle
-    Handle:BreakJoints()
-    local Controller = Instance.new("Motor6D")
-    Controller.Parent = Handle
-    Controller.Part1 = Handle
-    Controller.Part0 = Character[string.split(v, "\\\\")[2]]
-end
-
 
 local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
     
@@ -469,6 +429,48 @@ local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
         end
     end
 end
+
+	
+for _,v in pairs(PASettings.Animations.Attacks.OneKeyAttack) do
+    if type(v) == "table" then
+        print("Found attack")
+        local Attack = v
+        warn(Attack.Key)
+        Mouse.KeyDown:Connect(function(Key)
+            if string.lower(Key) == string.lower(Attack.Key) and not Attacking then
+                print("Attacking")
+                local CanSprint
+                if PASettings.Animations.SprintAnimation.SprintingEnabled then
+                    CanSprint = true
+                    PASettings.Animations.SprintAnimation.SprintingEnabled = false
+                end
+                
+                Humanoid.WalkSpeed = Attack.AttackWalkSpeed
+                Attacking = true
+                task.wait()
+                PlayAnimation(Attack.AnimationID, Attack.FrameSpeed, Attack.TweenSpeed, "Attacking")
+                Attacking = false
+                
+                if CanSprint then
+                    PASettings.Animations.SprintAnimation.SprintingEnabled = true
+                end
+                Humanoid.WalkSpeed = PASettings.WalkSpeed
+            end
+        end)
+    else
+        continue
+    end
+end
+
+for _, v in pairs(PASettings.HatsBeingAnimated) do
+    local Handle = Character[string.split(v, "\\\\")[1]].Handle
+    Handle:BreakJoints()
+    local Controller = Instance.new("Motor6D")
+    Controller.Parent = Handle
+    Controller.Part1 = Handle
+    Controller.Part0 = Character[string.split(v, "\\\\")[2]]
+end
+
 
 
 function Methods:PlayAnimation(ID, TweenSpeed, Speed)

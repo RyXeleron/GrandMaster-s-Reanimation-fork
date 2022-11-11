@@ -372,7 +372,7 @@ for _, v in pairs(PASettings.HatsBeingAnimated) do
     local Controller = Instance.new("Motor6D")
     Controller.Parent = Handle
     Controller.Part1 = Handle
-    Controller.Part0 = Character.Torso
+    Controller.Part0 = Character[string.split(v, "\\\\")[2]]
 end
 
 
@@ -406,7 +406,6 @@ local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
     
     for _, v in pairs(PASettings.HatsBeingAnimated) do
         Joints[v] = Character[v].Handle.Motor6D
-	Character[v].Handle.Motor6D.Part0 = Character[string.split(v, "\\\\")[2]]
     end
     
     Global.dancing = true

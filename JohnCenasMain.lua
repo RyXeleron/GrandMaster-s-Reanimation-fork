@@ -409,7 +409,7 @@ local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
     }
     
     for _, v in pairs(PASettings.HatsBeingAnimated) do
-        Joints[string.split(v, "\\\\")[1]] = Character[Character[string.split(v, "\\\\")[1]]].Handle.Motor6D
+        Joints[string.split(v, "\\\\")[1]] = Character[string.split(v, "\\\\")[1]].Handle.Motor6D
     end
     
     Global.dancing = true

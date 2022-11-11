@@ -176,7 +176,7 @@ end
 
 
 function Methods:BodyPartFlingOnTouch(BodyPart)
-    local Hat = Character[BodyPart].Handle
+    local Hat = Character[BodyPart]
     Hat.Touched:Connect(function(BasePart)
         if BasePart.Parent:FindFirstChildOfClass("Humanoid") and BasePart.Parent.Name ~= Player.Name and Attacking and not Flinging then
             Flinging = true

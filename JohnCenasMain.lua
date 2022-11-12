@@ -1,7 +1,7 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local Version = "v0.0.7"
+local Version = "v0.0.8"
 print(Version)
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)

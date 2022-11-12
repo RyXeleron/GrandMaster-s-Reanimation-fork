@@ -92,6 +92,15 @@ function Methods:SetWalkSpeed(Value)
     PASettings.WalkSpeed = Value
 end
 
+function Methods:Chat(Message)
+	local args = {
+    	[1] = Message,
+    	[2] = "All"
+	}
+
+	game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end
+
 local FakeRoot = getgenv().CloneRig.HumanoidRootPart
 
 function Methods:FreezeChar()

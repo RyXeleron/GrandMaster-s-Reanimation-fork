@@ -231,7 +231,8 @@ Methods:SystemMessage("Current Version: "..Version)
 
 function Methods:RemoveMesh(HatName)
     local success, failed = pcall(function()
-        Character[HatName].Handle:FindFirstChildOfClass("SpecialMesh"):Destroy()
+        getgenv().CloneRig[HatName].Handle:FindFirstChildOfClass("SpecialMesh"):Destroy()
+	getgenv().RealRig[HatName].Handle:FindFirstChildOfClass("SpecialMesh"):Destroy()
     end)
     if success then
         print("Successfully destroyed "..HatName.." mesh!")

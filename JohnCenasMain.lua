@@ -92,6 +92,13 @@ function Methods:SetWalkSpeed(Value)
     PASettings.WalkSpeed = Value
 end
 
+function Methods:PlaySound(SoundID, Looped)
+	local Sound = Instance.new("Sound", Character.Torso)
+	Sound.SoundId = SoundID
+	if Looped then Sound.Looped = true else Sound.Looped = false end
+	Sound:Play()
+end
+
 function Methods:Chat(Message)
 	local args = {
     	[1] = Message,

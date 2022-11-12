@@ -95,6 +95,7 @@ end
 function Methods:PlaySound(SoundID, Looped)
 	local Sound = Instance.new("Sound", Character.Torso)
 	Sound.SoundId = "rbxassetid://"..SoundID
+	Sound.Volume = 5
 	if Looped then Sound.Looped = true else Sound.Looped = false end
 	Sound:Play()
 end

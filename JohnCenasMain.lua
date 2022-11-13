@@ -131,6 +131,10 @@ function Methods:ApplyVelocityUpward(Distance)
     FakeRoot.Velocity = Vector3.new(FakeRoot.Velocity.X,Distance,FakeRoot.Velocity.Z)    
 end
 
+function Methods:LookAtMouse()
+	Character.HumanoidRootPart.CFrame = CFrame.lookAt(Character.HumanoidRootPart.Position, Vector3.new(Mouse.Hit.p.X, Character.HumanoidRootPart.Position.Y, Mouse.Hit.p.Z))
+end
+
 function Methods:SetWalkAnimation(AnimationID, FrameSpeed)
     PASettings.Animations.WalkAnimation.AnimationID = AnimationID
     PASettings.Animations.WalkAnimation.TweenSpeed = FrameSpeed

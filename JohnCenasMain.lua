@@ -1,14 +1,17 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local Version = "v1.0.1"
+local Version = "v1.0.2"
 print(Version)
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)
 Highlight.OutlineColor = Color3.fromRGB(55, 127, 244)
 
+getgenv().AntiVoid = true
 getgenv().ShowReal = true
 getgenv().Fling = true
+getgenv().AutoReclaim = true
+getgenv().AntiSleep = true
 getgenv().EnableSpin = true
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/CenteredSniper/Kenzen/master/ZendeyReanimate.lua", true))()
 Root.Transparency = 0

@@ -93,6 +93,7 @@ end)
 
 function Methods:SetWalkSpeed(Value)
     PASettings.WalkSpeed = Value
+    Humanoid.WalkSpeed = Value
 end
 
 function Methods:PlaySound(SoundID, Looped)

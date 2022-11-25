@@ -35,12 +35,12 @@ local PASettings = {
     Animations = {
         IdleAnimation = {
             AnimationID = nil,
-            FrameSpeed = 120,
+            FrameSpeed = 15,
             TweenSpeed = nil
         },
         WalkAnimation = {
             AnimationID = nil,
-            FrameSpeed = 120,
+            FrameSpeed = 15,
             TweenSpeed = nil
         },
         SprintAnimation = {
@@ -48,7 +48,7 @@ local PASettings = {
             Key = "52",
             SprintSpeed = nil,
             AnimationID = nil,
-            FrameSpeed = 120,
+            FrameSpeed = 15,
             TweenSpeed = nil
         },
      
@@ -158,7 +158,7 @@ function Methods:NewAttack(AttackName, Key, AnimationID, TweenSpeed, Speed)
     local Attack = PASettings.Animations.Attacks.OneKeyAttack[AttackName]
     Attack.Key = Key
     Attack.AnimationID = AnimationID
-    Attack.FrameSpeed = 120
+    Attack.FrameSpeed = 15
     Attack.TweenSpeed = TweenSpeed
     Attack.AttackWalkSpeed = Speed
 end
@@ -430,7 +430,7 @@ local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
             print("breaking")
             break
         end
-        local duration = keyframes[ii + 1] and keyframes[ii + 1].Time - frame.Time or task.wait(1 / 120)
+        local duration = keyframes[ii + 1] and keyframes[ii + 1].Time - frame.Time or task.wait(1 / 15)
         if keyframes[ii - 1] then
             task.wait(1 / FrameSpeed)
         end
@@ -440,7 +440,7 @@ local function PlayAnimation(ID, FrameSpeed, TweenSpeed, Type)
         end
         
         if FrameSpeed == nil or FrameSpeed == 0 then
-            TweenSpeed = 120
+            TweenSpeed = 15
         end
         
         for i, v in ipairs(frame:GetDescendants()) do

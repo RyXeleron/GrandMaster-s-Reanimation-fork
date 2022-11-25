@@ -158,7 +158,7 @@ function Methods:NewAttack(AttackName, Key, AnimationID, TweenSpeed, Speed)
     local Attack = PASettings.Animations.Attacks.OneKeyAttack[AttackName]
     Attack.Key = Key
     Attack.AnimationID = AnimationID
-    Attack.FrameSpeed = math.huge
+    Attack.FrameSpeed = 30
     Attack.TweenSpeed = TweenSpeed
     Attack.AttackWalkSpeed = Speed
 end
@@ -510,7 +510,7 @@ function Methods:PlayAnimation(ID, TweenSpeed, Speed)
     Humanoid.WalkSpeed = Speed
     Attacking = true
     task.wait()
-    PlayAnimation(ID, math.huge, TweenSpeed, "Attacking")
+    PlayAnimation(ID, 30, TweenSpeed, "Attacking")
     Attacking = false
     
     if CanSprint then

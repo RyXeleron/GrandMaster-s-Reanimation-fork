@@ -35,12 +35,12 @@ local PASettings = {
     Animations = {
         IdleAnimation = {
             AnimationID = nil,
-            FrameSpeed = 30,
+            FrameSpeed = 120,
             TweenSpeed = nil
         },
         WalkAnimation = {
             AnimationID = nil,
-            FrameSpeed = 30,
+            FrameSpeed = 120,
             TweenSpeed = nil
         },
         SprintAnimation = {
@@ -48,7 +48,7 @@ local PASettings = {
             Key = "52",
             SprintSpeed = nil,
             AnimationID = nil,
-            FrameSpeed = 30,
+            FrameSpeed = 120,
             TweenSpeed = nil
         },
      
@@ -158,7 +158,7 @@ function Methods:NewAttack(AttackName, Key, AnimationID, TweenSpeed, Speed)
     local Attack = PASettings.Animations.Attacks.OneKeyAttack[AttackName]
     Attack.Key = Key
     Attack.AnimationID = AnimationID
-    Attack.FrameSpeed = 30
+    Attack.FrameSpeed = 120
     Attack.TweenSpeed = TweenSpeed
     Attack.AttackWalkSpeed = Speed
 end

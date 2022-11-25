@@ -1,7 +1,7 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local Version = "v1.0.2"
+local Version = "v1.0.3"
 print(Version)
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)
@@ -35,12 +35,12 @@ local PASettings = {
     Animations = {
         IdleAnimation = {
             AnimationID = nil,
-            FrameSpeed = math.huge,
+            FrameSpeed = 30,
             TweenSpeed = nil
         },
         WalkAnimation = {
             AnimationID = nil,
-            FrameSpeed = math.huge,
+            FrameSpeed = 30,
             TweenSpeed = nil
         },
         SprintAnimation = {
@@ -48,7 +48,7 @@ local PASettings = {
             Key = "52",
             SprintSpeed = nil,
             AnimationID = nil,
-            FrameSpeed = math.huge,
+            FrameSpeed = 30,
             TweenSpeed = nil
         },
      

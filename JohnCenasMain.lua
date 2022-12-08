@@ -1,12 +1,13 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local Version = "v1.0.2"
+local Version = "v1.0.4"
 print(Version)
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)
 Highlight.OutlineColor = Color3.fromRGB(55, 127, 244)
 
+getgenv().AntiFling = true
 getgenv().AntiVoid = true
 getgenv().ShowReal = true
 getgenv().Fling = true
@@ -510,7 +511,7 @@ function Methods:PlayAnimation(ID, TweenSpeed, Speed)
     Humanoid.WalkSpeed = Speed
     Attacking = true
     task.wait()
-    PlayAnimation(ID, 30, TweenSpeed, "Attacking")
+    PlayAnimation(ID, math.huge, TweenSpeed, "Attacking")
     Attacking = false
     
     if CanSprint then

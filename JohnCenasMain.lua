@@ -1,13 +1,12 @@
 local Flinging = false
 local Highlight = Instance.new("Highlight")
 local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local Version = "v1.0.4"
+local Version = "v1.0.3"
 print(Version)
 
 Highlight.FillColor = Color3.fromRGB(34, 77, 153)
 Highlight.OutlineColor = Color3.fromRGB(55, 127, 244)
 
-getgenv().AntiFling = true
 getgenv().AntiVoid = true
 getgenv().ShowReal = true
 getgenv().Fling = true

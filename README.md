@@ -1,2 +1,1 @@
-# The-John-Cena-Factory
-We made John Cena 🗿
+# Pendulum Reanimation Menthods
